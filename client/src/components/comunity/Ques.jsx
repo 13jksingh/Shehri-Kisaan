@@ -8,16 +8,17 @@ export default function Ques(props) {
         <div className="QuesItem">
 
             <div className="QuesName">
-                    <h3>How to grow grapes</h3>
+                    <a href={"/community/".concat(props.quesId)}><h1>{props.quesTitle}</h1></a>
             </div>
 
             <p className="Ques-meta-data">
-                I want to grow grapes in my home
+                {props.quesDetail}
             </p>
 
             <div className="Ques-Tags">
-                <a href="">Grapes</a>
-                <a href="">Fruits</a>
+                {props.quesTag.map((tag) => (
+                    <a href="">{tag} </a>
+                ))}
             </div>
 
             <div>
@@ -27,7 +28,7 @@ export default function Ques(props) {
                     </svg>
                     13.4k
                 </a>
-                <p>13th January</p>
+                <p>{props.quesDate}</p>
                 <p>Answers 130</p>
             </div>
         </div>

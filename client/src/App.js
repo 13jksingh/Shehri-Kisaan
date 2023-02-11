@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import Community from './pages/Community';
+import OpenQues from './pages/OneQues';
 
 function App() {
 
@@ -54,6 +55,11 @@ function App() {
             <Route
               path="/community"
               element={<Community />}
+            />
+
+            <Route
+              path="/community/:quesId"
+              element={<OpenQues />}
             />
           </Routes>
         </div>
