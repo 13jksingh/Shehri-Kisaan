@@ -7,5 +7,7 @@ module.exports = {
         { useNewUrlParser: true, useUnifiedTopology: true },
         (err) => (err ? console.log(err) :console.log(" Mongoose is connected"))
       );
-  }
+  },
+
+  getDb : mongoose.connection
 };

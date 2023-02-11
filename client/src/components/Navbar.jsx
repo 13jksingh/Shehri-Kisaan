@@ -1,37 +1,33 @@
-import { Link } from "react-router-dom";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
-const Navbar = ({ user }) => {
-  const logout = () => {
-    window.open("http://localhost:5000/auth/logout", "_self");
-  };
+function NavBar(props) {
   return (
-    <div className="navbar">
-      <span className="logo">
-        <Link className="link" to="/">
-          Lama App
-        </Link>
-      </span>
-      {user ? (
-        <ul className="list">
-          <li className="listItem">
+    <>
+      <Navbar bg="primary" variant="dark">
+        <Container>
+        <Navbar.Brand href="#home">
             <img
-              src={user.photos[0].value}
               alt=""
-              className="avatar"
-            />
-          </li>
-          <li className="listItem">{user.displayName}</li>
-          <li className="listItem" onClick={logout}>
-            Logout
-          </li>
-        </ul>
-      ) : (
-        <Link className="link" to="login">
-          Login
-        </Link>
-      )}
-    </div>
+              src="/logo.svg"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />{' '}
+            Shehri Kisaan
+          </Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/news">News</Nav.Link>
+            <Nav.Link href="/community">Ask Ques</Nav.Link>
+            <Nav.Link href="/donation">Donation</Nav.Link>
+            {props.isLogin ?<Nav.Link href="http://localhost:5000/logout">Logout</Nav.Link>: <Nav.Link href="/login">Login</Nav.Link>}
+          </Nav>
+        </Container>
+      </Navbar>
+    </>
   );
-};
+}
 
-export default Navbar;
+export default NavBar;
