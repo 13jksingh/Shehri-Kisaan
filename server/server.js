@@ -5,6 +5,7 @@ const cors = require("cors");
 const passportSetup = require("./passport");
 const passport = require("passport");
 const authRoute = require("./routes/auth");
+const communityRoute = require("./routes/commuinty")
 require("dotenv").config({ path: "./config.env" });
 const app = express();
 
@@ -30,12 +31,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/auth", authRoute);
+app.use("/community",communityRoute);
 
-
-app.get("/logout", function(req, res){
-  req.logout();
-  res.redirect("http://localhost:3000/");
-});
 
 app.listen(port, () => {
     // perform a database connection when server starts

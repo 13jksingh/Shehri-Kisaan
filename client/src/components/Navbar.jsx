@@ -22,7 +22,7 @@ function NavBar(props) {
             <Nav.Link href="/news">News</Nav.Link>
             <Nav.Link href="/community">Ask Ques</Nav.Link>
             <Nav.Link href="/donation">Donation</Nav.Link>
-            {props.isLogin ?<Nav.Link href="http://localhost:5000/logout">Logout</Nav.Link>: <Nav.Link href="/login">Login</Nav.Link>}
+            {props.isLogin ?<Nav.Link href="http://localhost:5000/auth/logout">Logout</Nav.Link>: <Nav.Link href="/login">Login</Nav.Link>}
           </Nav>
         </Container>
       </Navbar>
